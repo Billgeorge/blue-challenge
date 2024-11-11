@@ -1,0 +1,5 @@
+INSERT INTO hero (id, name, description,likes,dislikes,image_url) VALUES (1, 'Superman','Superheroe de Crypton con super fuerza',0,0,'https://phantom-elmundo.unidadeditorial.es/fffc80493df258cceb20d6e9ba055b7c/resize/473/f/webp/assets/multimedia/imagenes/2022/08/03/16595421832009.jpg');
+INSERT INTO hero (id, name, description,likes,dislikes,image_url) VALUES (2, 'Aironman','Superheroe humano ingeniero',0,0,'https://lumiere-a.akamaihd.net/v1/images/ebo_ironman2_sp_da36dda0.jpeg?region=0,2,1024,575&width=768');
+INSERT INTO hero (id, name, description,likes,dislikes,image_url) VALUES (3, 'Thor','Dios del rayo',0,0,'https://img2.rtve.es/i/?w=1600&i=1585840423850.jpg');
+INSERT INTO hero (id, name, description,likes,dislikes,image_url) VALUES (4, 'Spiderman','Humano picado por animal',0,0,'https://media.vandal.net/i/1280x720/10-2023/17/202310171642263_5.jpg.webp');
+INSERT INTO hero (id, name, description,likes,dislikes,image_url) VALUES (5, 'Antman','Humano con super tecnologia',0,0,'https://i.blogs.es/f8a932/cartel-de-ant-man/1366_2000.jpg');

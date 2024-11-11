@@ -1,0 +1,11 @@
+/home/leonardo/Documents/learning/blue-express-challenge/backend/character-core/src/main/java/com/blue/express/character_core/CharacterCoreApplication.java
+/home/leonardo/Documents/learning/blue-express-challenge/backend/character-core/src/main/java/com/blue/express/character_core/constant/FameAction.java
+/home/leonardo/Documents/learning/blue-express-challenge/backend/character-core/src/main/java/com/blue/express/character_core/constant/Response.java
+/home/leonardo/Documents/learning/blue-express-challenge/backend/character-core/src/main/java/com/blue/express/character_core/controller/HeroController.java
+/home/leonardo/Documents/learning/blue-express-challenge/backend/character-core/src/main/java/com/blue/express/character_core/controller/UpdateHeroRequest.java
+/home/leonardo/Documents/learning/blue-express-challenge/backend/character-core/src/main/java/com/blue/express/character_core/dto/Converter.java
+/home/leonardo/Documents/learning/blue-express-challenge/backend/character-core/src/main/java/com/blue/express/character_core/dto/HeroDTO.java
+/home/leonardo/Documents/learning/blue-express-challenge/backend/character-core/src/main/java/com/blue/express/character_core/repository/Hero.java
+/home/leonardo/Documents/learning/blue-express-challenge/backend/character-core/src/main/java/com/blue/express/character_core/repository/HeroRepository.java
+/home/leonardo/Documents/learning/blue-express-challenge/backend/character-core/src/main/java/com/blue/express/character_core/service/HeroService.java
+/home/leonardo/Documents/learning/blue-express-challenge/backend/character-core/src/main/java/com/blue/express/character_core/service/HeroServiceImpl.java
