@@ -2,6 +2,10 @@
 
 This project exposes a set of endpoints for interacting with the resource Character based on the next requirement [Requirement](https://github.com/leo-from-BX/likeDislike).
 
+## Cors
+
+The endpoints are protected by cors policy, only the client http://localhost:3000/ can consume without problem.
+
 ## Run instructions
 
 In order to run this project in your local is prerequisite to have docker installed in a recent version.
