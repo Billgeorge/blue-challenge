@@ -31,7 +31,7 @@ http operation: GET
 
 ### API get the top 5 characters order by likes number
 
-url: http://localhost:8080/characters?orderBy=LIKE
+url: http://localhost:8080/characters/rank?orderBy=LIKE
 http operation: GET
 Order by possible values: LIKE,DISLIKE
 
