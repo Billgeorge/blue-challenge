@@ -75,3 +75,9 @@ Adding pagination for the get operations.
 ### Instrumentation (AOP)
 1. Logging.
 2. Monitoring the database interactions.
+
+### Exception handling
+Dig more and determine new possible exceptions scenarios for improving the response provided to the client. It should return the most accurate error response in case of exceptions.
+
+### Test coverage
+Keep your test coverage over 90%.
