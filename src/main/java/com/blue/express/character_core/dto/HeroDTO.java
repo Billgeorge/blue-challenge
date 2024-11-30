@@ -1,8 +1,12 @@
 package com.blue.express.character_core.dto;
 
+import com.blue.express.character_core.constant.Constant;
+
 import java.time.LocalDateTime;
 
 public class HeroDTO {
+
+    private String detail;
 
     private long id;
 
@@ -18,12 +22,8 @@ public class HeroDTO {
 
     private LocalDateTime updateDateTime;
 
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public String getDetail() {
+        return detail;
     }
 
     public long getId() {
@@ -32,6 +32,18 @@ public class HeroDTO {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public void setDetail(Long id) {
+        this.detail = Constant.CHARACTER_PATH+id;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public String getName() {

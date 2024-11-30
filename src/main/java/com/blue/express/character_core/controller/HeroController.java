@@ -1,7 +1,10 @@
 package com.blue.express.character_core.controller;
 
+import com.blue.express.character_core.constant.ErrorMessages;
 import com.blue.express.character_core.constant.Response;
+import com.blue.express.character_core.controller.payload.OrderByResponse;
 import com.blue.express.character_core.dto.HeroDTO;
+import com.blue.express.character_core.util.PayloadUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +15,7 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000/", maxAge = 3600)
-@RequestMapping("character")
+@RequestMapping("characters")
 public class HeroController {
 
     @Autowired
@@ -20,12 +23,12 @@ public class HeroController {
 
     @GetMapping("/random")
     public ResponseEntity<HeroDTO> getHero() {
-        Optional<HeroDTO> hero = heroService.getRandonHero();
+        Optional<HeroDTO> hero = heroService.getRandomHero();
         return hero.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @GetMapping("/search")
-    public ResponseEntity<List<HeroDTO>> searchHeroByName(@RequestParam String name){
+    @GetMapping()
+    public ResponseEntity<List<HeroDTO>> searchHero(@RequestParam String name){
         List<HeroDTO> hero = heroService.searchHeroByName(name);
         if(hero.isEmpty()){
             return ResponseEntity.notFound().build();
@@ -40,28 +43,25 @@ public class HeroController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<HeroDTO> findyHeroBydId(@PathVariable long id) {
+    public ResponseEntity<HeroDTO> findByHeroBydId(@PathVariable long id) {
         Optional<HeroDTO> hero = heroService.findHeroById(id);
         return hero.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @GetMapping("/all/like")
-    public ResponseEntity<List<HeroDTO>> heroesByLikes() {
-        List<HeroDTO> hero = heroService.getHeroOrderByFame();
-        if(hero.isEmpty()){
-            return ResponseEntity.notFound().build();
+    @GetMapping("rank")
+    public ResponseEntity<OrderByResponse> orderBy(@RequestParam String orderBy) {
+        try {
+            List<HeroDTO> hero = heroService.orderHeroesBy(orderBy);
+            if (hero.isEmpty()) {
+                return ResponseEntity.notFound().build();
+            }
+            return ResponseEntity.ok(PayloadUtil.createSuccessResponse(hero));
+        }catch (IllegalArgumentException e){
+            return ResponseEntity.badRequest()
+                    .body(PayloadUtil.createErrorResponse(ErrorMessages.INVALID_ORDERBY_PARAM.getMessage()));
         }
-        return ResponseEntity.ok(hero);
     }
 
-    @GetMapping("/all/dislike")
-    public ResponseEntity<List<HeroDTO>> heroesByDisikes() {
-        List<HeroDTO> hero = heroService.getHeroOrderByDislike();
-        if(hero.isEmpty()){
-            return ResponseEntity.notFound().build();
-        }
-        return ResponseEntity.ok(hero);
-    }
 
     @PatchMapping("/{id}/like")
     public ResponseEntity updateLikes(@PathVariable long id){
@@ -82,5 +82,4 @@ public class HeroController {
             default -> ResponseEntity.internalServerError().build();
         };
     }
-
 }
